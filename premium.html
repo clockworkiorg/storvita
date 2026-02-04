@@ -309,15 +309,19 @@
     </footer>
 
     <script>
-        // Initialize Stripe
-        const stripe = Stripe('pk_test_51Sx1j5DIeIX8Pk5cdQpasstpauMRSPsG7DF174oYDRhqdPc0dBd9aZA6Mwxc74WLeIgw9HDfboCLI0yfPMJRqBKe002AvCTU8L');
+        // Initialize Stripe - Using placeholder until server-side integration is complete
+        // TODO: Move to server-side Checkout Session creation (secure pattern)
+        const STRIPE_KEY = 'PLACEHOLDER_UNTIL_BACKEND_READY';
 
         async function buyProduct(priceId, amount) {
-            // This is a simplified version - in production, you'd create a Checkout Session on the server
+            // Payment processing coming soon
+            // Directing to email for manual processing until Stripe backend is built
             alert(`Payment processing coming soon! You selected the $${amount} assessment. Email chris@storvita.com to get started.`);
             
-            // TODO: Implement full Stripe Checkout integration with server-side session creation
-            // For now, directing to email contact
+            // TODO: Implement full Stripe Checkout integration:
+            // 1. Create server-side endpoint for Checkout Session
+            // 2. Use publishable key from environment variable
+            // 3. Redirect to Stripe-hosted checkout page
         }
     </script>
 </body>
